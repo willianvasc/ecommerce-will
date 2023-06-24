@@ -1,0 +1,51 @@
+<div class="container-fluid" style="min-height: 30vh;">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-8">
+            <div class="w-100 py-5">
+                <h2 class="color-adireto">Meus dados</h2>
+            </div>
+        </div>
+    </div>
+    <form action="perfil" method="post">
+        {% for dado in dados %}
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-8">
+                <label>Nome completo</label>
+                <input type="text" class="form-control form-control-lg" name="nome" value="{{dado.nome_user}}">
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-4">
+                <label>Telefone</label>
+                <input type="tel" class="form-control form-control-lg" name="telefone" value="{{dado.telefone}}">
+            </div>
+            <div class="col-4">
+                <label>Email</label>
+                <input type="text" class="form-control form-control-lg" name="email" value="{{dado.email}}">
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-4">
+                <label>Endereco</label>
+                <input type="text" class="form-control form-control-lg" name="enderco" value="{{dado.endereco}}">
+            </div>
+            <div class="col-2">
+                <label>Bairro</label>
+                <input type="text" class="form-control form-control-lg" name="bairro" value="{{dado.bairro}}">
+            </div>
+            <div class="col-2">
+                <label>Numero</label>
+                <input type="text" class="form-control form-control-lg" name="numero" value="{{dado.numero_casa}}">
+            </div>
+            <div class="row d-flex justify-content-center align-items-center mt-5">
+                <div class="col-1">
+                    <input type="submit" class="btn btn-success" name="salvar" value="Alterar">
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </form>
+</div>
+</div>
+</div>

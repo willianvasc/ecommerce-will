@@ -1,0 +1,48 @@
+<div class="row py-5 d-flex justify-content-center align-items-center">
+    <div class="col-8">
+        <h2 class="color-adireto">Carrinho</h2>
+    </div>
+</div>
+<div class="row d-flex justify-content-center align-items-center">
+    <div class="col-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Valor</th>
+                    <th class="text-end" scope="col">Retirar item</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in itens %}
+                <tr>
+                    <th scope="row">{{item.id_carrinho}}</th>
+                    <td>{{item.nome_produto}}</td>
+                    <td>{{item.valor_produto}}</td>
+                    <td class="text-end">
+                        <form action="carrinho" method="POST">
+                            <input type="hidden" name="id" value="{{item.id_carrinho}}">
+                            <button type="submit" name="exclui" class="btn btn-danger">x</button>
+                    </td>
+                    </form>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Valor Final</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for valor in soma %}
+                <tr>
+                    <th scope="row">R${{valor.soma}}.00</th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

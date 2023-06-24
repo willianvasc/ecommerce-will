@@ -1,0 +1,147 @@
+<section class="vh-100 gradient-custom">
+    <div class="py-5 h-100">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-vidro text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-start">
+                        <div class="mb-md-5 mt-md-4 pb-5">
+
+                            <h2 class="fw-bold mb-2 text-uppercase">Cadastre-se</h2>
+                            <form action="cadastro" method="POST" onsubmit="paraForm()">
+                                <div class="row py-2">
+                                    <div class="col-8">
+                                        <label class="form-label" for="nome">Nome completo</label>
+                                        <input type="text" id="nome" placeholder="Digite seu nome aqui" name="nome" class="form-control form-control-lg" required/>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label" for="telefone">Telefone</label>
+                                        <input type="tel" id="telefone" name="telefone"
+                                            class="form-control form-control-lg" placeholder="(xx) xxxxx-xxxx" maxlength="14" required/>
+                                    </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-12">
+                                        <label class="form-label" for="email">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="seu melhor e-mail"
+                                            class="form-control form-control-lg" required/>
+                                    </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-6">
+                                        <label class="form-label" for="senha">CEP</label>
+                                        <input type="text" class="form-control form-control-lg" name="CEP" id="cep">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label" for="endereco">Endereço</label>
+                                        <input type="text" class="form-control form-control-lg" name="endereco" id="endereco">
+                                    </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-8">
+                                        <label class="form-label" for="bairro">Bairro</label>
+                                        <input type="text" class="form-control form-control-lg" name="bairro" id="bairro">
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="form-label" for="numero">Número</label>
+                                        <input type="text" class="form-control form-control-lg" name="numero" id="numero">
+                                </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-6">
+                                        <label class="form-label" for="senha">Senha</label>
+                                        <input type="password" id="senha" name="senha"
+                                            class="form-control form-control-lg" placeholder="senha" required/>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label" for="senha">Confirme a senha</label>
+                                        <input type="password" id="confirma_senha" name="senha"
+                                            class="form-control form-control-lg" required placeholder="confirme sua senha"/>
+                                    </div>
+                                </div>
+                                <div class="row pt-4">
+                                    <div class="col-12 text-end">
+                                        <button class="btn btn-outline-light btn-lg px-5" name="enviar"
+                                            type="submit" id="cadastrar">Cadastrar</button>
+                                    </div>
+                                </div>
+                        </div>
+                                <div class="row pt-1">
+                                    <div class="col-12 text-start">
+                                        <a class="btn btn-outline-light btn-sm" href="login"
+                                          id="cadastrar"><</a>
+                                    </div>
+                                </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 text-end">
+            <img class="logo" src="app/public/images/white-logo.svg">
+        </div>
+    </div>
+</section>
+
+<script>
+    //função para desativar o botão de cadastrar enquanto os inputs de senha estiverem diferentes.
+    window.onload = function(){
+        let cadastrar = document.getElementById('cadastrar');
+        cadastrar.disabled=true;
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////
+    $(document).ready(function(){
+	let telefone = document.getElementById('telefone');
+	let cadastrar = document.getElementById('cadastrar');
+	let senha = document.getElementById('senha');
+	let confirma_senha = document.getElementById('confirma_senha');
+        confirma_senha.addEventListener('change',function(){
+            if(senha.value==confirma_senha.value){
+            confirma_senha.classList.remove("error");
+            confirma_senha.classList.add("correct");
+            cadastrar.disabled=false;
+            }else{
+                alert("As senhas estão diferentes");
+                confirma_senha.classList.remove("correct");
+                confirma_senha.classList.add("error");
+            }
+        })
+
+    //máscara para o telefone    
+    telefone.addEventListener('keypress',function(){
+        if(telefone.value.length==0){
+            telefone.value+="(";
+        }
+        if(telefone.value.length==3){
+            telefone.value+=")";
+        }
+        if(telefone.value.length==9){
+            telefone.value+="-";
+        }
+    })
+
+});
+    ////////////////////////////
+
+    //Recebe os dados do cep inserido e pões nos respectivos inputs. Aqui eu usei uma api do site VIACEP
+let cep = document.getElementById("cep");
+    cep.addEventListener('keyup', function () {
+
+        let api = "https://viacep.com.br/ws/" + cep.value + "/json/";
+
+        fetch(api).then(function (response) {
+            response.json().then(function (data) {
+                mostrarDados(data);
+            })
+        })
+
+    })
+
+    //Função que coloca os dados nos inputs
+    function mostrarDados(dados) {
+        let logradouroInput = document.getElementById("endereco");
+        let bairroInput = document.getElementById("bairro");
+        logradouroInput.value = dados.logradouro;
+        bairroInput.value = dados.bairro;
+    }
+</script>

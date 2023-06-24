@@ -1,0 +1,25 @@
+{% for produtos in produto %}
+<div class="row d-flex justify-content-center align-items-center my-3">
+    <div class="col-4 p-0">
+        <img src="
+        {{produtos.arquivo}}" class="w-100" alt="">
+    </div>
+    <div class="col-4 px-4 conteudo_produto">
+        <h1 class="color-adireto">
+            {{produtos.nome_produto}}
+        </h1>
+        <p class="my-2 h6 fw-medium">
+            {{produtos.descricao}}
+        </p>
+        <h4 class="mt-4 fw-bold color-adireto">
+            R${{produtos.valor_produto}}
+        </h4>
+        <form action="produto?produto={{produtos.id_produto}}" method="POST">
+            <input type="submit" name="adiciona_carrinho" value="adicionar ao carrinho"
+                class="bg-adireto px-2 py-1 rounded text-white text-decoration-none border-0">
+        </form>
+    </div>
+</div>
+</div>
+
+{% endfor %}

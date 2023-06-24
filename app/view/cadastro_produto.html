@@ -1,0 +1,45 @@
+<div class="row py-5 d-flex justify-content-center align-items-center">
+    <div class="col-8">
+        <h2 class="color-adireto">Cadastrar produto</h2>
+    </div>
+</div>
+<div class="row d-flex justify-content-center align-items-center" style="min-height: 35vh;">
+    <div class="col-8">
+        <form method="POST" action="cadastroProd" enctype='multipart/form-data'>
+            <div class="row">
+                <div class="col-12">
+                    <label class="form-label" for="nome_prod">Nome do produto</label>
+                    <input type="text" class="form-control form-control-lg" id="nome_prod" name="nome_prod" placeholder="Digite aqui o nome do produto">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-7">
+                    <label class="form-label" for="descricao">Descrição do produto</label>
+                    <input type="text" class="form-control form-control-lg" name="descricao" placeholder="descrição  do produto"
+                        id="descricao">
+                </div>
+                <div class="col-5">
+                    <label class="form-label" for="valor">Valor do produto</label>
+                    <input type="text" class="form-control form-control-lg" name="valor" placeholder="R$00.00" id="valor">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-12">
+                    <label class="form-label" for="imagem">Insira aqui a imagem de destaque do produto</label>
+                    <input type="file" class="form-control form-control-lg" name="imagem" id="imagem">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-12">
+                    <label class="form-label" for="estoque">Quantidade de produtos em estoque</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="0" name="estoque" id="estoque">
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-12">
+                    <input type="submit" class="form-control form-control-lg" name="cadastroProd" placeholder="" id="">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

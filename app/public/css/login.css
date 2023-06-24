@@ -1,0 +1,42 @@
+*{
+margin: 0px;
+padding:0px;
+}
+
+.page_login{
+    background-color: rgba(0, 0, 0, 0.548);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: rgba(255, 255, 255, 0.342);
+    width: 400px;
+    border-radius: 10px;
+}
+
+.container input{
+    display: block;
+    background-color: transparent;
+    border:1px solid black;
+}
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #7b001f, #b6002d);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ad0630, #bb1b43)
+    }
+
+.bg-vidro{
+    background-color: #0000005e;
+}
+.logo{
+    margin-top: -40px;
+    width: 131px;
+    margin-right: 20px;
+}
