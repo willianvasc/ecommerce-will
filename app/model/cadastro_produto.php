@@ -22,7 +22,7 @@ class cadastro_produto
         move_uploaded_file($arquivo["tmp_name"],  $arquivo_nome);
         //////////////
         //query para salvar o produto no produto no banco de dados
-        $sql = "INSERT INTO login.produtos(nome_produto,valor_produto,descricao,estoque,arquivo) VALUES('$nome_prod','$valor','$descricao','$estoque','$arquivo_nome')";
+        $sql = "INSERT INTO adireto.produtos(nome_produto,valor_produto,descricao,estoque,arquivo) VALUES('$nome_prod','$valor','$descricao','$estoque','$arquivo_nome')";
         $sql = $con->prepare($sql);
         $sql->execute();
         if ($sql->rowCount()) {

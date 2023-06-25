@@ -16,7 +16,11 @@ class PerfilController
         $conteudo = $template->render($parametros);
         $header = file_get_contents('app/view/templates/header.html');
         $footer = file_get_contents('app/view/templates/footer.html');
+        if(isset($_POST['atualiza'])){
+            atualiza_perfil::atualiza($_SESSION['id'],$_POST);
+            echo "<script>alert('Perfil atualizado com sucesso!')</script>";
 
+        }
         echo $header;
         echo $conteudo;
         echo $footer;

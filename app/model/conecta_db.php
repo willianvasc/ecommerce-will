@@ -5,7 +5,7 @@ class conecta_banco {
     public static function conecta(){
         if(self::$conn==null){
         //query para conexão com o banco de dados
-        self::$conn = new PDO('mysql: host=localhost; dbname:login;', 'root','');
+        self::$conn = new PDO('mysql: host=localhost; dbname:adireto;', 'root','');
         }
         return self::$conn;
     }

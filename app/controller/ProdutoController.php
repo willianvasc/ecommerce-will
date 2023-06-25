@@ -19,6 +19,7 @@ class ProdutoController
         $header=file_get_contents('app/view/templates/header.html');
         if(isset($_POST['adiciona_carrinho'])){
             adiciona_carrinho::adicionar();
+            echo "<script>alert('Produto adicionado ao carrinho!')</script>";
         }
         $footer = file_get_contents('app/view/templates/footer.html');
         //exibe os conteúdos da página

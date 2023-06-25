@@ -10,6 +10,7 @@ class loginController
         $twig = new \Twig\Environment($loader);
         $template = $twig->load('login.html');
         $parametros = array();
+
         if (isset($_POST['login'])) {
             $login_result = login_user::login($_POST);
             foreach ($login_result as $login) {

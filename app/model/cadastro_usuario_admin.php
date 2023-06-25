@@ -14,7 +14,7 @@ class cadastro__usuario_adm
         $adm = $post['admin'];
         var_dump($post['admin']);
         //query para cadastrar um novo usuário
-        $sql = "INSERT INTO login.cadastros(nome_user,email,senha,telefone,endereco,bairro,numero_casa,admin_status) VALUES(:nome,:email,:senha,:telefone,:endereco,:bairro,:numero,$adm)";
+        $sql = "INSERT INTO adireto.cadastros(nome_user,email,senha,telefone,endereco,bairro,numero_casa,admin_status) VALUES(:nome,:email,:senha,:telefone,:endereco,:bairro,:numero,$adm)";
         //evita que haja sql injeqtion no campo de login
         $sql = $con->prepare($sql);
         $sql->bindValue(':email', $email);

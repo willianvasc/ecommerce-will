@@ -39,8 +39,8 @@
         require_once 'app/model/soma_final_carrinho.php';
         require_once 'app/model/verifica_login.php';
         require_once 'app/model/cadastro_usuario_admin.php';
-        require_once 'app/model/verifica_adm.php';
         require_once 'app/model/perfil.php';
+        require_once 'app/model/atualiza_perfil.php';
         require_once 'vendor/autoload.php';
         $core = new Core;
         $core->start($_GET);

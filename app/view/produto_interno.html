@@ -14,7 +14,7 @@
         <h4 class="mt-4 fw-bold color-adireto">
             R${{produtos.valor_produto}}
         </h4>
-        <form action="produto?produto={{produtos.id_produto}}" method="POST">
+        <form action="produto?produto={{produtos.id_produto}}" onsubmit="colocaCarrinho()" method="POST">
             <input type="submit" name="adiciona_carrinho" value="adicionar ao carrinho"
                 class="bg-adireto px-2 py-1 rounded text-white text-decoration-none border-0">
         </form>
@@ -23,3 +23,9 @@
 </div>
 
 {% endfor %}
+
+<script>
+    function colocaCarrinho(){
+        alert("Produto inserido no carrinho");
+    }
+</script>

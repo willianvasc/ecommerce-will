@@ -4,12 +4,18 @@ class CadastroUsuarioAdminController
     public function index()
     {
         conecta_banco::conecta();
+        session_start();
         //chama a view
         $loader = new \Twig\Loader\FilesystemLoader('app/view');
         $twig = new \Twig\Environment($loader);
         $template = $twig->load('cadastro_user_admin.html');
         $parametros = array();
         //////////////
+
+        //função que valida se a pessoa é adm
+        if ($_SESSION['adm'] != "1") {
+            header('Location:/login_adireto/home');
+        }
         //passa os parametros para a página
         $conteudo = $template->render($parametros);
         /////////////

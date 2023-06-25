@@ -34,12 +34,14 @@
             <thead>
                 <tr>
                     <th scope="col">Valor Final</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 {% for valor in soma %}
-                <tr>
+                <tr class="">
                     <th scope="row">R${{valor.soma}}.00</th>
+                    <th class="text-end" scope="row"><button class="btn btn-primary">Finalizar compra</button></th>
                 </tr>
                 {% endfor %}
             </tbody>

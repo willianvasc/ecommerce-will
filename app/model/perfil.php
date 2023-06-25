@@ -3,7 +3,7 @@ class perfil{
     public static function exibe($id) {
         $con = conecta_banco::conecta();
         //query para mostrar os dados do usuário logado
-        $sql = "SELECT * FROM login.cadastros where id_cadastro=$id";
+        $sql = "SELECT * FROM adireto.cadastros where id_cadastro=$id";
         $sql = $con -> prepare($sql);
         $sql->execute();
         $result = array();

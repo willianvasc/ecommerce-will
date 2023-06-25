@@ -7,7 +7,7 @@ class login_user
         $senha = $post['senha'];
         $user = $post['email'];
         //query para verificar se login e senha estão corretos
-        $sql = "SELECT * FROM login.cadastros where email=:email and senha=:senha";
+        $sql = "SELECT * FROM adireto.cadastros where email=:email and senha=:senha";
         $sql = $con->prepare($sql);
         //evita que haja sql injeqtion no campo de login
         $sql->bindValue(':email',$user);
