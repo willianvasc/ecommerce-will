@@ -12,7 +12,7 @@ class cadastro_sql
         $bairro = $post['bairro'];
         $numero = $post['numero'];
         //query para cadastrar um novo usuário
-        $sql = "INSERT INTO aditero.cadastros(nome_user,email,senha,telefone,endereco,bairro,numero_casa) VALUES(:nome,:email,:senha,:telefone,:endereco,:bairro,:numero)";
+        $sql = "INSERT INTO adireto.cadastros(nome_user,email,senha,telefone,endereco,bairro,numero_casa) VALUES(:nome,:email,:senha,:telefone,:endereco,:bairro,:numero)";
         //evita que haja sql injeqtion no campo de login
         $sql = $con->prepare($sql);
         $sql->bindValue(':email', $email);
