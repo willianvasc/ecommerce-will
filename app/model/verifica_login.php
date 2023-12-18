@@ -5,7 +5,7 @@ class verifica_login
     public static function valida()
     {
         if ($_SESSION['logado'] != "1") {
-            header('Location:' . $_SERVER['HTTP_ORIGIN'] . '/login_adireto/login');
+            // header('Location:' . $_SERVER['HTTP_ORIGIN'] . '/projeto_carrinho_adireto/login');
         }
     }
 }

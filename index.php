@@ -18,6 +18,7 @@
         <?php
         require_once 'app/core/core.php';
         require_once 'app/controller/HomeController.php';
+        require_once 'app/controller/HeaderController.php';
         require_once 'app/controller/ErroController.php';
         require_once 'app/controller/LoginController.php';
         require_once 'app/controller/CadastroController.php';
@@ -42,6 +43,7 @@
         require_once 'app/model/perfil.php';
         require_once 'app/model/atualiza_perfil.php';
         require_once 'vendor/autoload.php';
+        echo $_GET['url'];
         $core = new Core;
         $core->start($_GET);
         ?>

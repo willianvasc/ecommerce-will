@@ -16,7 +16,7 @@ class loginController
             foreach ($login_result as $login) {
                 if ($login->id_cadastro != "") {
                     $_SESSION['logado'] = "1";
-                    header('Location:' . $_SERVER['HTTP_ORIGIN'] . '/login_adireto/home');
+                    header('Location:' . $_SERVER['HTTP_ORIGIN'] . '/projeto_carrinho_adireto/home');
                 }
             }
         }

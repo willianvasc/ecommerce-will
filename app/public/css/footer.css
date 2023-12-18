@@ -4,8 +4,6 @@
         
         .card-footer{
             padding: 2% 7%;
-            color: white;
-            background-color: #7b001f;
         }
         
         ul{
@@ -19,7 +17,6 @@
         }
         
         ul > li:hover{
-            color:#470314;
             cursor: pointer;
         }
         

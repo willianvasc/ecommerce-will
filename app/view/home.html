@@ -1,20 +1,8 @@
 <div class="row d-flex justify-content-center align-items-center">
-    <div class="col-5">
+    <div class="col-8">
         <div class="text-start">
             <div class="w-100 py-5">
                 <h2 class="color-adireto">Produtos</h2>
-            </div>
-        </div>
-    </div>
-    <div class="col-3">
-        <div class="text-start">
-            <div class="w-100 py-5">
-                {% if adm == 1 %}
-                <ul>
-                    <li class="d-inline-block"><a href="cadastroProd" class="color-adireto d-inline-block fw-bold">Cadastrar Produtos</a></li>
-                    <li class="d-inline-block"><a href="CadastroUsuarioAdmin" class="color-adireto d-inline-block fw-bold">Cadastrar Usuários</a></li>
-                </ul>
-                {% endif %}
             </div>
         </div>
     </div>
@@ -30,7 +18,7 @@
                     <p class="card-text card-text-limit">{{produto.descricao}}</p>
                     <span class="fw-medium">R${{produto.valor_produto}}</span>
                     <div class="w-100 text-end">
-                        <a href="/login_adireto/produto?produto={{produto.id_produto}}"
+                        <a href="/projeto_carrinho_adireto/produto?produto={{produto.id_produto}}"
                             class="bg-adireto px-2 py-1 rounded text-white text-decoration-none border-0">
                             Ver produto
                         </a>

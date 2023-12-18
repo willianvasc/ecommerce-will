@@ -1,15 +1,26 @@
-<div class="container-fluid">
-    <div class="row bg-adireto py-4">
-        <div class="col-2">
-        </div>
-        <div class="col-6 text-white justify-center d-flex pt-2">
+<div class="row bg-dark py-4">
+    <ul class="d-flex flex-row text-white justify-content-around">
+        <li>
             <a href="home"> <img src="app/public/images/white-logo.svg" width="100"></a>
-        </div>
-        <div class="col-2 d-flex justify-content-end">
-            <a href="perfil"><div class="nome"><img src="app/public/images/perfil.png" width="40"/></div></a>
-        </div>
-        <div class="col-2 text-white">
-            <a class="btn btn-light rounded" href="carrinho"><span> carrinho</span><img
-                    src="app/public/images/cart-adireto.png" width="30px"></a>
-        </div>
-    </div>
+        </li>
+        {% if adm == 1 %}
+        <li class="d-flex align-items-center">
+            <a href="cadastroProd" class="text-decoration-none text-white">Cadastrar Produtos</a>
+        </li>
+        <li  class="d-flex align-items-center">
+            <a href="CadastroUsuarioAdmin" class="text-decoration-none text-white">Cadastrar Usuários</a>
+        </li>
+        {% endif %}
+        <li>
+            <a class="btn btn-light rounded" href="carrinho">
+                <span> carrinho</span>
+                <img src="app/public/images/cart-adireto.png" width="30px">
+            </a>
+        </li>
+        <li>
+            <a href="perfil">
+                <div class="nome"><img src="app/public/images/perfil.png" width="40" /></div>
+            </a>
+        </li>
+    </ul>
+</div>

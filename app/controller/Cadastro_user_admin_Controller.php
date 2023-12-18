@@ -14,7 +14,7 @@ class CadastroUsuarioAdminController
 
         //função que valida se a pessoa é adm
         if ($_SESSION['adm'] != "1") {
-            header('Location:/login_adireto/home');
+            header('Location:/projeto_carrinho_adireto/home');
         }
         //passa os parametros para a página
         $conteudo = $template->render($parametros);

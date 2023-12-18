@@ -6,7 +6,7 @@ class ProdutoController
         conecta_banco::conecta();
         session_start();
          if ( $_SESSION['logado']!="1") {
-            header('Location:' . $_SERVER['HTTP_ORIGIN'] . '/login_adireto/login');
+            header('Location:' . $_SERVER['HTTP_ORIGIN'] . '/projeto_carrinho_adireto/login');
         }
         $loader = new \Twig\Loader\FilesystemLoader('app/view');
         $twig = new \Twig\Environment($loader);
